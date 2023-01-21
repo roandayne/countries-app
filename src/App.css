@@ -1,0 +1,57 @@
+html, body {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.main-container {
+  display: flex;
+  flex-direction: row;
+}
+
+.country-country-details-container {
+  display: flex;
+  flex-direction: column;
+  margin: 0 14px;
+}
+
+/* Countries List */
+.countries-list-container {
+  background-color: pink;
+  height: auto;
+  width: 187px;
+}
+
+h2 {
+  text-align: center;
+}
+
+ul {
+  text-align: center;
+}
+
+.country-text {
+  font-size: 10px;
+  padding: 0;
+  margin: 0;
+  line-height: 0;
+}
+
+/* Country */
+.country-container {
+  height: auto;
+  width: 560px;
+  background-color: yellow;
+  
+}
+
+/* Country Details */
+.country-details-container {
+  background-color: burlywood;
+  height: auto;
+  width: 560px;
+  margin-top: 14px;
+}
