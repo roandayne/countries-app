@@ -26,13 +26,12 @@ function CountriesList() {
   }
 
   const handleChange = (e, page) => {
-    setPage(page)
     paginatedCountries.jump(page)
   }
 
   return (
     <div className="countries-list-container">
-      <h2>Countries List</h2>
+      <h2 class="p-3 mb-6">Countries List</h2>
       <ul>
         {paginatedCountries.currentData().map((country) => {
           return (
@@ -42,8 +41,8 @@ function CountriesList() {
           )
         })}
       </ul>
-      <Stack spacing={2}>
-        <Pagination boundaryCount={1} size='small' onChange={handleChange} count={countries.length} variant="outlined" />
+      <Stack class="mt-6" spacing={2}>
+        <Pagination siblingCount={0} size='small' onChange={handleChange} count={countries.length} />
       </Stack>
     </div>
   )

@@ -22,7 +22,7 @@ function Country() {
         <h1 class="text-9xl">{country ? country.flag : ""}</h1>
       </div>
       <h2>{country ? country.name.common : ""}</h2>
-      <p class="text-xs m-10 mt-3">{description}</p>
+      <p class="text-xs m-10 mt-3 line-clamp-3 h-100 block">{description}</p>
     </div>
   )
 }

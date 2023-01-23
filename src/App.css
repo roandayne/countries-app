@@ -11,6 +11,7 @@ html, body {
 .main-container {
   display: flex;
   flex-direction: row;
+  padding: 40px;
 }
 
 .country-country-details-container {
@@ -21,9 +22,9 @@ html, body {
 
 /* Countries List */
 .countries-list-container {
-  background-color: pink;
+  background-color: white;
   height: auto;
-  width: 187px;
+  width: 220px;
 }
 
 h2 {
@@ -32,13 +33,18 @@ h2 {
 
 ul {
   text-align: center;
+  line-height: 100%;
 }
 
 .country-text {
-  font-size: 10px;
   padding: 0;
   margin: 0;
   line-height: 0;
+  color: black;
+}
+
+.country-text:focus {
+  color: red;
 }
 
 /* Country */
@@ -57,9 +63,9 @@ ul {
 }
 
 .image-container{
-  width: 200px;
-  height: 200px;
-  padding: 30px;
+  width: 150px;
+  height: 150px;
+  padding: 20px;
 }
 
 .coats-of-arms {
