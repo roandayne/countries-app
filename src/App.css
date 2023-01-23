@@ -29,6 +29,8 @@ html, body {
 
 h2 {
   text-align: center;
+  font-weight: 600;
+  color: black;
 }
 
 ul {
@@ -60,12 +62,12 @@ ul {
   height: auto;
   width: 560px;
   margin-top: 14px;
+  padding: 30px;
 }
 
 .image-container{
   width: 150px;
   height: 150px;
-  padding: 20px;
 }
 
 .coats-of-arms {

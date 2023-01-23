@@ -5,7 +5,7 @@ function CountryDetails() {
 
   return (
     <div className="country-details-container">
-      <h2 class="mt-3">Country Details</h2>
+      <h2>Country Details</h2>
       <div class='flex flex-row'>
         <div className='image-container'>
           <img

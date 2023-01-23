@@ -32,7 +32,7 @@ function CountriesList() {
   return (
     <div className="countries-list-container">
       <h2 class="p-3 mb-6">Countries List</h2>
-      <ul>
+      <ul class="mb-6">
         {paginatedCountries.currentData().map((country) => {
           return (
             <li key={country.name.common} onClick={() => handleClick(country)}>
@@ -41,7 +41,7 @@ function CountriesList() {
           )
         })}
       </ul>
-      <Stack class="mt-6" spacing={2}>
+      <Stack>
         <Pagination siblingCount={0} size='small' onChange={handleChange} count={countries.length} />
       </Stack>
     </div>
