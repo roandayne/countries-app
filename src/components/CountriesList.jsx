@@ -1,6 +1,6 @@
-import { useEffect, useState } from 'react'
+import { useEffect } from 'react'
 import axios from 'axios'
-import { Pagination, Stack } from '@mui/material'
+import { Box, Pagination, Stack, CircularProgress } from '@mui/material'
 import usePagination from '../hooks/pagination'
 import { useDispatch, useSelector } from 'react-redux'
 import { countriesSelector, initializeCountriesData, setActiveCountry } from '../redux/countriesReducer'
@@ -31,16 +31,22 @@ function CountriesList() {
 
   return (
     <div className="countries-list-container">
-      <h2 class="p-3 mb-6">Countries List</h2>
-      <ul class="mb-6">
-        {paginatedCountries.currentData().map((country) => {
-          return (
-            <li key={country.name.common} onClick={() => handleClick(country)}>
-              <a className='country-text' href='#'>{country.name.common}</a>
-            </li>
-          )
-        })}
-      </ul>
+      {
+        countries.length > 0 ? <>
+          <h2 class="p-3 mb-6">Countries List</h2>
+          <ul class="mb-6">
+            {paginatedCountries.currentData().map((country) => {
+              return (
+                <li key={country.name.common} onClick={() => handleClick(country)}>
+                  <a className='country-text' href='#'>{country.name.common}</a>
+                </li>
+              )
+            })}
+          </ul>
+        </> : <Box sx={{ display: 'flex' }}>
+          <CircularProgress />
+        </Box>
+      }
       <Stack>
         <Pagination siblingCount={0} size='small' onChange={handleChange} count={countries.length} />
       </Stack>
