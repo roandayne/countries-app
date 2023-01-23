@@ -5,6 +5,7 @@ html, body {
   display: flex;
   align-items: center;
   justify-content: center;
+  background-color: #E4E2E2;
 }
 
 .main-container {
@@ -44,14 +45,24 @@ ul {
 .country-container {
   height: auto;
   width: 560px;
-  background-color: yellow;
-  
+  background-color: white;
 }
 
 /* Country Details */
 .country-details-container {
-  background-color: burlywood;
+  background-color: white;
   height: auto;
   width: 560px;
   margin-top: 14px;
+}
+
+.image-container{
+  width: 200px;
+  height: 200px;
+  padding: 30px;
+}
+
+.coats-of-arms {
+  height: 100%;
+  width: 100%;
 }

@@ -8,10 +8,8 @@ import { countriesSelector, initializeCountriesData, setActiveCountry } from '..
 function CountriesList() {
   const countries = useSelector((state) => countriesSelector.selectAll(state.countries) ?? [])
   const dispatch = useDispatch()
-  const [page, setPage] = useState(1)
   const PER_PAGE = 20
 
-  // const count = Math.ceil((countries?.length == 0 ? countries.length : 0) / PER_PAGE);
   const paginatedCountries = usePagination(countries, PER_PAGE);
 
   useEffect(() => {
