@@ -1,18 +1,12 @@
-import { createAsyncThunk, createEntityAdapter, createSlice } from '@reduxjs/toolkit'
-import axios from 'axios'
+import { createEntityAdapter, createSlice } from '@reduxjs/toolkit'
 
 const countriesAdapter = createEntityAdapter({
   selectId: (country) => country.flag
 })
-// const countryAdapter = createEntityAdapter({
-//   selectId: (country) => country.name
-// })
+
 export const countriesSelector = countriesAdapter.getSelectors(
   (state) => state.countries
 );
-// export const countrySelector = countryAdapter.getSelectors(
-//   (state) => state.country
-// )
 
 const initialState = {
   countries: countriesAdapter.getInitialState(),
