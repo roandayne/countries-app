@@ -8,7 +8,7 @@ function Country() {
 
   useEffect(() => {
     const getDescription = async() => {
-      const desc = await axios.get(`https://en.wikipedia.org/api/rest_v1/page/summary/${country.name.common}`)
+      const desc = await axios.get(`https://en.wikipedia.org/api/rest_v1/page/summary/${country?.name?.common}`)
       setDescription(desc.data.extract)
     }
 

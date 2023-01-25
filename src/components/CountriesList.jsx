@@ -4,6 +4,7 @@ import { Box, Pagination, Stack, CircularProgress } from '@mui/material'
 import usePagination from '../hooks/pagination'
 import { useDispatch, useSelector } from 'react-redux'
 import { countriesSelector, initializeCountriesData, setActiveCountry } from '../redux/countriesReducer'
+import { sagaActions } from '../redux/sagaActions'
 
 function CountriesList() {
   const countries = useSelector((state) => countriesSelector.selectAll(state.countries) ?? [])
@@ -13,12 +14,7 @@ function CountriesList() {
   const paginatedCountries = usePagination(countries, PER_PAGE);
 
   useEffect(() => {
-    const getCountries = async() => {
-      const countries = await axios.get(`https://restcountries.com/v3.1/all`)
-      dispatch(initializeCountriesData(countries.data))
-    }
-
-    getCountries()
+    dispatch({ type: sagaActions.FETCH_DATA_SAGA })
   }, [])
 
   const handleClick = (country) => {
@@ -48,7 +44,7 @@ function CountriesList() {
         </Box>
       }
       <Stack>
-        <Pagination siblingCount={0} size='small' onChange={handleChange} count={countries.length} />
+        <Pagination siblingCount={0} size='small' onChange={handleChange} count={Math.ceil(countries.length / 20)} />
       </Stack>
     </div>
   )

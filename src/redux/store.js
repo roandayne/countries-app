@@ -1,11 +1,21 @@
-import { configureStore } from '@reduxjs/toolkit'
+import createSagaMiddleware from '@redux-saga/core'
+import { configureStore, getDefaultMiddleware } from '@reduxjs/toolkit'
 import { useSelector } from 'react-redux'
 import countriesReducer from './countriesReducer'
+import saga from './saga'
 
-export const store = configureStore({
+const sagaMiddleware = createSagaMiddleware();
+
+const middleware = [sagaMiddleware]
+
+const store = configureStore({
   reducer: {
     countries: countriesReducer,
   },
+  middleware
 })
 
-export const useAppSelector = useSelector
+sagaMiddleware.run(saga)
+
+export default store
+
