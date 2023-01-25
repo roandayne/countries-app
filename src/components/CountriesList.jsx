@@ -1,9 +1,8 @@
 import { useEffect } from 'react'
-import axios from 'axios'
 import { Box, Pagination, Stack, CircularProgress } from '@mui/material'
 import usePagination from '../hooks/pagination'
 import { useDispatch, useSelector } from 'react-redux'
-import { countriesSelector, initializeCountriesData, setActiveCountry } from '../redux/countriesReducer'
+import { countriesSelector, setActiveCountry } from '../redux/countriesReducer'
 import { sagaActions } from '../redux/sagaActions'
 
 function CountriesList() {
