@@ -29,8 +29,8 @@ function CountriesList() {
     <div className="countries-list-container">
       {
         countries.length > 0 ? <>
-          <h2 class="p-3 mb-6">Countries List</h2>
-          <ul class="mb-6">
+          <h2 className="p-3 mb-6">Countries List</h2>
+          <ul className="mb-6">
             {paginatedCountries.currentData().map((country) => {
               return (
                 <li key={country.name.common} onClick={() => handleClick(country)}>
